@@ -4,6 +4,8 @@ TARGET="/home/maweki/Downloads/dta/"
 TMPDIR="/tmp/"
 PROG=$1
 
+echo "Downloading $PROG"
+
 rm -f ${TMPDIR}${PROG}.*
 RTMPLINE=`curl --silent --data "pid="$PROG http://www.iplayerconverter.co.uk/convert.aspx | grep RTMPDump | grep -P -o "\-r.+\-o"`
 COMMAND="rtmpdump -q $RTMPLINE ${TMPDIR}${PROG}.flv"
