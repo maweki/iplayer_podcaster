@@ -3,7 +3,7 @@ set -e
 P=$1
 
 PAGE=`curl -L --silent "$P"`
-URLS=`echo $PAGE | grep -P -o "http://www.bbc.co.uk/programmes/(\w)+#auto"`
+URLS=`echo $PAGE | grep -P -o "http://www.bbc.co.uk/programmes/(\w)+#play"`
 echo $URLS
 for url in $URLS
 do
